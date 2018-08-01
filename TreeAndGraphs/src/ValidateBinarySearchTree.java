@@ -1,6 +1,6 @@
 
 public class ValidateBinarySearchTree {
- 
+
 	public static class TreeNode{
 		int val;
 		TreeNode left;
@@ -9,7 +9,33 @@ public class ValidateBinarySearchTree {
 			this.val = v;
 		}
 	}
-public static boolean isValidBST(TreeNode root) {
+//========================================================	
+// The time complexity for the following solution is O(n2)
+//========================================================
+
+/*	public static boolean isValidBST(TreeNode root) {
+		if(root == null) return true;
+		return isSubtreeLessThan(root.left,root.val) 
+			&& isSubtreeGreaterThan(root.right, root.val)
+		    && isValidBST(root.left) && isValidBST(root.right);
+	}
+	public static boolean isSubtreeLessThan(TreeNode r, int n) {
+		if(r==null) return true;
+		return  r.val < n 
+			&& isSubtreeLessThan(r.left,n)
+			&& isSubtreeGreaterThan(r.right, n);
+	}
+	public static boolean isSubtreeGreaterThan(TreeNode r, int n) {
+		if(r == null)  return true;
+		return  r.val > n
+			&& isSubtreeLessThan(r.left,n)
+			&& isSubtreeGreaterThan(r.right, n);
+		
+	}	*/
+ //========================================================	
+ // The time complexity for the following solution is O(n2)
+ //========================================================
+/*public static boolean isValidBST(TreeNode root) {
 	 if(root == null) return true;
 	 if(root.left != null && root.right != null) {
 		  if(root.val > root.left.val && root.val < root.right.val   && 
@@ -62,17 +88,33 @@ public static boolean isValidBST(TreeNode root) {
 		}else 
 			return true;
 		return l;
+	}*/
+
+
+//========================================================	
+// The time complexity for the following solution is O(n)
+// by creating a range to check the validity of each node for the entire tree
+//========================================================
+	public static boolean isValidBST(TreeNode root) {
+		if (root ==null) return true;
+		else return helper(root, null, null);
+	}	
+	public static boolean helper(TreeNode root, Integer min, Integer max) {
+		if(root == null) return true;
+		
+		return (min == null || root.val > min ) && (max == null || root.val < max)  
+			&& helper(root.left, min, root.val) 
+			&& helper(root.right, root.val, max);
 	}
-	
 	public static void main(String[] args) {
-		TreeNode t1 = new TreeNode(2);
+		TreeNode t1 = new TreeNode(4);
 		t1.left = new TreeNode(1);
-		t1.right = new TreeNode(3);
+		t1.right = new TreeNode(15);
+		t1.right.left = new TreeNode(13);
 		
         TreeNode t2 = null;
 		
 		System.out.println(isValidBST(t1));
 		System.out.println(isValidBST(t2));
-
 	}
 }

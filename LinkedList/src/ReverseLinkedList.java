@@ -1,5 +1,5 @@
 
-public class LinkedList {
+public class ReverseLinkedList {
 	
      static Node head;
 	 static class Node {
@@ -58,7 +58,7 @@ public class LinkedList {
 		 return head;
      }
 	public static void main(String[] args) {
-		LinkedList l = new LinkedList();
+		ReverseLinkedList l = new ReverseLinkedList();
 		l.head = new Node(10);
 		l.head.next = new Node(20);
 		l.head.next.next = new Node(30);
