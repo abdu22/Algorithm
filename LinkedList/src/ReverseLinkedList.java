@@ -30,7 +30,21 @@ public class ReverseLinkedList {
 	     head = tempNxt;
 		return head;
 	}
-	 public Node reverseBetween(Node h, int m, int n) {
+	 
+	public static Node reverse2(Node h) {
+		Node cur = h;
+		Node nNxt = null; Node temp;
+		while(cur.next != null) {
+		temp = cur.next;
+		cur.next = nNxt; 
+		nNxt = cur;
+		cur = temp;
+		}
+		cur.next = nNxt;
+		head = cur;    
+		return head;
+	}
+	public Node reverseBetween(Node h, int m, int n) {
 		 Node current =h;
 		 Node x = null ,y=null, z=null;
 		 int counter = 1;
@@ -65,9 +79,10 @@ public class ReverseLinkedList {
 		l.head.next.next.next = new Node(40);	
 		l.head.next.next.next.next = new Node(50);
 		l.print(head);
-       // l.reverse(head);
-       // l.print(head);
-	    System.out.println();
+		
+       l.reverse2(head);
+       l.print(head);
+	    /*System.out.println();
         System.out.println(head.data+"-"+head.next.data+"-"+head.next.next.data+"-"+head.next.next.next.data+"-"+head.next.next.next.next.data);
 
           l.reverseBetween(head, 2, 4);
@@ -75,6 +90,6 @@ public class ReverseLinkedList {
         System.out.println();
         System.out.println(head.data+"-"+head.next.data+"-"+head.next.next.data+"-"+head.next.next.next.data+"-"+head.next.next.next.next.data);
        // l.print(head);
-         }
+*/         }
 
 }

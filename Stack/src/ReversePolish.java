@@ -42,6 +42,14 @@ public class ReversePolish {
 		String[] tokens3 = {"4", "13", "5", "/", "+"};
 		System.out.println(evalRPN(tokens3));
 		
+		int a = 1;
+		if(a == 1)
+			try {
+				throw new Exception();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 	
 	

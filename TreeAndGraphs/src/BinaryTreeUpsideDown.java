@@ -13,10 +13,12 @@ public class BinaryTreeUpsideDown {
 		 return help(root,null);
 	}
 	 public static TreeNode help(TreeNode r, TreeNode p) {
-		 if(p==null) {  TreeNode x = help(r.left,r);
+		 if(p==null) { 
+			 
+			 TreeNode x = help(r.left,r);
 		                //System.out.println(x.val);
 		                //System.out.println(v.val);
-			              return v;
+			   return v;
 		 }
 		 if( r!= null) {
 			 TreeNode newP = help(r.left,r);

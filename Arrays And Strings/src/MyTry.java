@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class MyTry {
 
@@ -19,7 +22,7 @@ public class MyTry {
 		//long g = 4294967294;
 		//System.out.println(g);
 */
-		 String s1 = new String("xxx");
+		String s1 = new String("xxx");
 		 String s2 = new String("xxx");
 		 String s3 = s1;
 		 
@@ -30,15 +33,29 @@ public class MyTry {
 		 String s4 = new String();
 		 String s5 = new String();
 		 
+		 System.out.println("xxxxxxxxxxx");
 		 System.out.println(s4==s5);
-	    	 System.out.println(s4.equals(s5));
+	    	 System.out.println(s4.equals(s5)+": equal ");
 	    	 System.out.println("=============="); 	 
 	  Integer i =new Integer(1);
 	  Integer j =new Integer(1);
 	  System.out.println(i==j);
-	
-	
-	
+	  System.out.println("=============="); 	 
+	  System.out.println("=============="); 	 
+	  String x = "  123";
+	  System.out.println(x);
+	  
+	  String y = x.replaceAll(" ", "");
+	  System.out.println(y);
+	  System.out.println(!y.startsWith("[^0-9]"));
+	  
+	  
+	  String d = "  ";
+	 System.out.println(d.length());
+	  
+	 Collection c = new ArrayList<>();
 	}
-
+    public void x() {
+   
+    }
 }
