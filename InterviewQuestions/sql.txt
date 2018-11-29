@@ -77,6 +77,26 @@ Q4)join the two tables Orders and Customers, using the CustomerID field in both 
      SELECT *
      FROM Orders
      Left join Customer ON Customer.CustomerID = Customer.CustomerID
+     
+Q5) Update the City column of all records in the Customers table to 'Oslo'. 
+     UPDATE Customers
+     SET City = 'Oslo'
+     
+Q6) Set the value of the City columns to 'Oslo', but only the ones where the Country column has the value "Norway".
+        UPDATE Country
+	SET city = 'OSLO'
+	Where Country = 'Norway'
+Q7)Update the City value and the Country value for customerId = 34;
+        UPDATE Country
+	SET city = 'OSLO' , Country = 'Norway;
+	WHERE CustomerId = 34;
+Q8) Delete all the records from the Customers table where the Country value is 'Norway'.
+        DELETE 
+	FROM Customers
+	Where Country = 'Norway'
+Q9) Select all records from the Customers where the PostalCode column is NOT empty
+         SELECT * 
+	 WHERE PostalCde IS NOT NULL
 
 Q) Table: Person
 
