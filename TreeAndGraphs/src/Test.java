@@ -26,19 +26,28 @@ public class Test {
 		
 		System.out.println(result);
 		
-		String regexpr = "[^a-zA-Z0-9]";
+		String regexpr = "[^a-zA-Z3-9 ]";
+        String regexpr2 =  "[a-zA-Z0-9]";
+        String regexpr3 =  "[^a-zA-Z && [o-q]]";
+        
+        
 		
-		String input = "abdu1233";  
+		String input = "*abd opq u 1233!";  
 		
 		String output = input.replaceAll(regexpr, "");
+		String output2 = input.replaceAll(regexpr2, "");
+		String output3 = input.replaceAll(regexpr3, "");
+		
+		System.out.println("[^a-zA-Z3-9 ] : "+output);
+		System.out.println("[a-zA-Z0-9] : "+output2);
+		System.out.println("[^a-zA-Z && [o-q] : "+output3);
+		
+		//if(input.length() == output.length())  System.out.println("we don't have speciall char");
+		
+		//else System.out.println("we have speciall char");
 		
 		
-		if(input.length() == output.length())  System.out.println("we don't have speciall char");
 		
-		else System.out.println("we have speciall char");
-		
-		
-		System.out.println(output);
 		
 			}
 

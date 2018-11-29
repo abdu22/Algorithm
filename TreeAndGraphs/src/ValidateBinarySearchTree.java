@@ -97,12 +97,12 @@ public class ValidateBinarySearchTree {
 //========================================================
 	public static boolean isValidBST(TreeNode root) {
 		if (root ==null) return true;
-		else return helper(root, null, null);
+		else return helper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}	
 	public static boolean helper(TreeNode root, Integer min, Integer max) {
 		if(root == null) return true;
 		
-		return (min == null || root.val > min ) && (max == null || root.val < max)  
+		return (root.val > min ) && (root.val < max)  
 			&& helper(root.left, min, root.val) 
 			&& helper(root.right, root.val, max);
 	}

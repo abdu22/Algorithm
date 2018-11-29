@@ -21,8 +21,12 @@ public boolean isMatch() {
     for(String x:a){
     	System.out.println("********");
     	
-        if(x.matches(pattern) && (Integer.parseInt(x)) >=0 && (Integer.parseInt(x)) <=255)  ans = true;
-    } 
+        if(x.matches(pattern) && (Integer.parseInt(x)) >=0 && (Integer.parseInt(x)) <=255) {
+        	ans = true ; }else {
+        		return false;
+        	}
+        }
+    
     return ans;
 }
     

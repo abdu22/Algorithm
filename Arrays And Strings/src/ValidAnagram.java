@@ -23,5 +23,4 @@ public class ValidAnagram {
       
 		 HashMap<Integer, Integer> i = new HashMap<Integer, Integer>();
 	}
-   Date d; 
 }

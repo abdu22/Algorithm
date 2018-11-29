@@ -1,0 +1,91 @@
+Some of The Most Important SQL Commands
+=======================================
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255))
+Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255))
+Truncate table Person
+insert into Person (PersonId, LastName, FirstName) values ('1', 'Wang', 'Allen')
+Truncate table Address
+insert into Address (AddressId, PersonId, City, State) values ('1', '2', 'New York City', 'New York')
+
+========================================================================================================
+
+========================================================================================================
+Q1) ORDERED BY
+  ~ Select all records from the Customers table, sort the result alphabetically by the column City.
+     		 SELECT * FROM Customers 
+    		 ORDER BY City;
+
+  ~ Select all records from the Customers table, sort the result reversed alphabetically by the column City.
+    		 SELECT * FROM Customers 
+     		 ORDER BY City DESC;
+
+  ~ Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City.
+		 SELECT * FROM Customers 
+     		 ORDER BY City, Country;
+
+Q2) Insert a new record in the Customers table.
+    
+     INSERT INTO
+ Customers 
+(
+
+CustomerName, 
+Address, 
+City, 
+PostalCode,
+Country
+)
+
+
+VALUES
+ 
+(
+
+'Hekkan Burger',
+'Gateveien 15',
+'Sandnes',
+'4306',
+'Norway'
+)
+;
+
+Q) Table: Person
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| PersonId    | int     |
+| FirstName   | varchar |
+| LastName    | varchar |
++-------------+---------+
+PersonId is the primary key column for this table.
+Table: Address
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| AddressId   | int     |
+| PersonId    | int     |
+| City        | varchar |
+| State       | varchar |
++-------------+---------+
+AddressId is the primary key column for this table.
+
+Q1) 
+Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:
+
+   Ans : - select FirstName ,LastName ,City , State
+           from  Person
+           left join Address on Person.PersonId = Address.PersonId

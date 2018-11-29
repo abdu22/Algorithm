@@ -26,7 +26,7 @@ public class MinStack {
     
     private Stack<Integer> stack = new Stack<>();
     private Stack<Integer> minStack = new Stack<>();
-    
+/*    
     public void push(int x) {
        stack.push(x);
        if (minStack.isEmpty() || x <= minStack.peek()) {
@@ -41,8 +41,26 @@ public class MinStack {
  }
     public int getMin() {
        return minStack.peek();
- }
+ }*/
     
+    public void push(int n) {
+    	  stack.push(n); 
+    	  if(minStack.isEmpty()) minStack.push(n);
+    	  else {
+    		  if(minStack.peek()>n) minStack.push(n);
+    		  else minStack.push(minStack.peek());
+    	  }
+    }
+    public int top() {
+    	 return stack.peek();
+    }
+    public int getMin() {
+    	 return minStack.peek();
+    }
+    public int pop() {
+    	minStack.pop();
+    	return stack.pop();
+    }
     public static void main(String [] args) {
     	  MinStack s = new MinStack();
     	  s.push(9);

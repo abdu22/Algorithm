@@ -1,31 +1,22 @@
 
 public class fibonacci {
 
-	public static void fib(int n){
-	      int a = 1; 
-	      int b = 1; 
-	      int c  = a+b; 
-	      System.out.println(a);
-	      System.out.println(b);
-	      System.out.println(c);
-	      int count = 3;
-	      help(b,c,n,count);
-	      
-	    }
-	public static void help(int i, int j, int n, int count){
-	      
-	      if(n>count)  {
-	              int k=i+j; 
-	              System.out.println(k);
-	              i = j; 
-	              j = k; 
-	              count++;
-	              help(i,j,n,count);
-	       }
+	public static int fib(int n){
+	 if(n==1 || n==2) return 1;
+	 int n1 = 1;
+	 int n2 = 1;
+	 int count = 2;
+	 while(count<n) {
+		 int temp = n1;
+		 n1 = n2;
+		 n2=n2+temp;
+		 count++;
+	 }
+	 return n2;
 	 }
 	
 	public static void main(String[] args) {
-		fib(7);
+		System.out.println(fib(6));
 
 	}
 

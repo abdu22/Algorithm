@@ -33,11 +33,11 @@ public class LCAofBT {
 		
 		    for(k = 0; k<l1.size() && k<l2.size(); k++) {
 		    	  
-			    if(!l1.get(k).equals(l1.get(k)))  break;
+			    if(!l1.get(k).equals(l2.get(k)))  break;
 		    } 
 		    
-		  System.out.println(k);
-		return l1.get(k-2); 
+		  System.out.println("k :"+k);
+		return l1.get(k-1); 
 		
 	}
 	
@@ -55,46 +55,42 @@ public class LCAofBT {
 		  return false;
 	}
 
-	/*static Node root;
-	static List<Integer> l1 = new ArrayList<Integer>();
-    static List<Integer> l2 = new ArrayList<Integer>();
-	
-	public static int findLCA(int a, int b) {
-		if(root == null) return -1;
-		l1.clear();
-		l2.clear();
-		return findLCA(a,b,l1,l2);
-	}
-	public static int findLCA(int a, int b , List<Integer> l1,List<Integer> l2 ) {
-		
-		if(!checkPath(a,root,l1) || !checkPath(b,root,l2) )  return -1;
-		
-		// check the two list
-		//int j = 0;
-		int k = 0;
-		for(int x:l1) System.out.println(x+" , ");
-		for(int x:l2) System.out.println(x+" , ");
-		for(int i = 0; i<l1.size() ; i++) {
-			k++;
-			if(l1.get(i) != l2.get(i)) break;
-		}
-		
-		return l1.get(k-2);
-	}
-	public static boolean checkPath(int n, Node r, List<Integer> l) {
-		
-		if(r == null) return false;
-		
-		l.add(r.data);
-		
-		if(r.data == n) return true;
-		if(r.left  != null && checkPath(n,r.left,l)) return true;
-		if(r.right != null && checkPath(n,r.right,l)) return true;
-		
-		l.remove(l.size()-1);
-		return false;
-	}
-	*/
+    public int findLCA2(int i, int j) {
+    	l1.clear();
+    	l2.clear();
+    	return findLCA2(root,i,j) ;
+    }
+    
+    public int findLCA2(Node root, int i, int j) {
+    	int ans = -1;
+    	
+    	if(!path2(root,l1,i) || !path2(root,l2,j)) return ans;
+    	System.out.println(l1);
+    	System.out.println(l2);
+    	int a = 0;
+    	for(a=0; a<l1.size()&& a<l2.size() ; a++) {
+    		  if(l1.get(a) != l2.get(a)) {
+        		  break;
+    		  } 
+    	}
+    	
+    	return l1.get(a-1);
+    }
+    public boolean path2(Node root, List<Integer> l, int i) {
+    	if(root == null) return false;
+    	l.add(root.data);
+    	
+    	if(root.data == i) return true;
+    	
+    	if(root.left !=null && path2(root.left,l,i)) return true;
+    	
+    	if(root.right !=null && path2(root.right,l,i)) return true;
+    	
+    	l.remove(l.size()-1);
+    	
+    	return false;
+    }
+    
 	public static void main(String[] args) {
 		LCAofBT tree = new LCAofBT(); 
         tree.root = new Node(1); 
@@ -108,10 +104,10 @@ public class LCAofBT {
         String w = "zzz";
         w.toCharArray();
     
-        System.out.println("LCA(4, 5): " + tree.findLCA(4,5)); 
-        //System.out.println("LCA(4, 6): " + tree.findLCA(4,6)); 
-       // System.out.println("LCA(3, 4): " + tree.findLCA(3,4)); 
-      //  System.out.println("LCA(2, 4): " + tree.findLCA(2,4)); 
+        System.out.println("LCA(4, 5): " + tree.findLCA2(4,5)); 
+        System.out.println("LCA(4, 6): " + tree.findLCA2(4,6)); 
+        System.out.println("LCA(3, 4): " + tree.findLCA2(3,4)); 
+        System.out.println("LCA(2, 4): " + tree.findLCA2(2,4)); 
 
 	}
 

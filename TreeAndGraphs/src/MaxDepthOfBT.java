@@ -25,15 +25,21 @@ public class MaxDepthOfBT {
         return Math.min(depth+minDepth(root.left),depth+minDepth(root.right));
          }
 	}
-    
+ 
+	public static int maxDepth2(TreeNode root) {
+		if(root == null) return 0; 
+		
+		return Math.max(maxDepth2(root.left)+1, maxDepth2(root.right)+1);
+	} 
     
 	public static void main(String[] args) {
 		TreeNode t = new TreeNode(4);
 		t.left = new TreeNode(2);
-		//t.right = new TreeNode(8);
-		//t.right.left = new TreeNode(7);
+		t.right = new TreeNode(8);
+	    t.right.left = new TreeNode(7);
+	    t.right.left.right= new TreeNode(19);
 		
-		System.out.println(maxDepth(t));
+		System.out.println(maxDepth2(t));
 		System.out.println(minDepth(t));
 	}
 
