@@ -61,11 +61,13 @@ VALUES
 )
 ;
 =============================================================================================
-Q1) SQL query for find third highest salary of employee?
-   SELECT salary
-   FROM Employee
-   ORDERED BY salary DESC
-   LIMIT 2,1
+Q1) SQL query for find third highest salary of employee? as ThirdHighestsalary
+   	SELECT 
+	   IFNULL (
+	             (SELECT salary
+                     FROM Employee
+                     ORDERED BY salary DESC
+                     LIMIT 2,1)           , NULL) AS ThirdHighestsalary
   
 Q2) List the number of customers in each country, ordered by the country with the most customers first
     SELECT COUNT(customersID), Country
