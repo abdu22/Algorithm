@@ -61,6 +61,15 @@ VALUES
 )
 ;
 
+Q) SQL query for find third highest salary of employee?
+   SELECT salary
+   FROM Employee
+   ORDERED BY salary DESC
+   LIMIT 2,1
+  
+
+
+
 Q) Table: Person
 
 +-------------+---------+
@@ -89,3 +98,4 @@ Write a SQL query for a report that provides the following information for each 
    Ans : - select FirstName ,LastName ,City , State
            from  Person
            left join Address on Person.PersonId = Address.PersonId
+	   
