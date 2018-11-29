@@ -60,15 +60,23 @@ VALUES
 'Norway'
 )
 ;
-
-Q) SQL query for find third highest salary of employee?
+=============================================================================================
+Q1) SQL query for find third highest salary of employee?
    SELECT salary
    FROM Employee
    ORDERED BY salary DESC
    LIMIT 2,1
   
+Q2) List the number of customers in each country, ordered by the country with the most customers first
+    SELECT COUNT(customersID), Country
+    FROM Customers
+    GROUP BY Country
+    Ordered BY COUNT(CustomerID) DESC
 
-
+Q4)join the two tables Orders and Customers, using the CustomerID field in both tables as the relationship between the two tables.
+     SELECT *
+     FROM Orders
+     Left join Customer ON Customer.CustomerID = Customer.CustomerID
 
 Q) Table: Person
 
