@@ -6,13 +6,27 @@ import java.util.List;
 
 public class MergeIntervals {
 	private static class IntervalCompar implements Comparator<Interval>{
-
 		@Override
 		public int compare(Interval a, Interval b) {
 			return a.start < b.start ? -1 : a.start == b.start ? 0 :1 ;
-		}
-		 
+		}	 
 	}
+	 // Input: [[1,3],[2,6],[8,10],[15,18]]                  
+    // Output: [[1,6],[8,10],[15,18]]
+	
+	//     1 - 3
+    //       2 - - - 6
+	//                   8 - 10
+	//						       15 - - 18
+	
+	// int put : [[1,4],[0,2],[3,5]] expected [0-5]  == my 1st cod == >  [[0,4],[3,5]] 
+	// sorted    [0,2],[1,4],[3,5]
+	
+	//   0 - 2
+	//     1 - - 4
+	//         3 - -5
+	
+			
 	public static class Interval {
 		int start;
 		int end; 
@@ -30,20 +44,24 @@ public class MergeIntervals {
 		 
 		 Collections.sort(intervals, new IntervalCompar());        // to sort with key as "start" 
 		 
-		 Interval x = new Interval();
-		 x.start = intervals.get(0).start;
-		 x.end = intervals.get(0).end;
+
+		 int l = intervals.get(0).start;
+		 int r = intervals.get(0).end;
 		 
-		 for(int k=1; k< intervals.size()-1;k++) {
-			   if(x.end < intervals.get(k+1).start) {
-				    x.end = Math.max(x.end,intervals.get(k).end);
-				    ans.add(x);
-				    x = new Interval();                                // we must creat a new object after each x is added to the new list 'ans'; 
-				    x.start = intervals.get(k+1).start;
-			   }
+		 for(int i=1; i<intervals.size(); i++) {
+			 
+			      if(r < intervals.get(i).start) {
+			    	  
+			    	  ans.add(new Interval(l,r));
+			    	  
+			    	  l = intervals.get(i).start;
+			    	  r = intervals.get(i).end;
+			      }else if(r >= intervals.get(i).start && r < intervals.get(i).end) {
+			    	    r = intervals.get(i).end;
+			      }
 		 }
-		 x.end = Math.max(x.end,intervals.get(intervals.size()-1).end);
-		 ans.add(x);
+		 ans.add(new Interval(l,r));
+		 
 		return ans;   
     }
 	public static void main(String[] args) {
