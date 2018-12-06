@@ -70,7 +70,29 @@ public class AddTwoNumbers {
 	    	}
 	       return beforeHead.next;
 	    }
-	    
+	    public static ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+	    	ListNode dummy = new ListNode(0);
+	    	ListNode curAns = dummy;
+	    	ListNode cur1=l1;  ListNode cur2 = l2;
+	    	int carryOn = 0;
+	    	while(cur1!=null && cur2!=null) {
+	    		 int sum = carryOn+ cur1.val+cur2.val;
+	    			 curAns.next = new ListNode(sum%10);
+	    			 carryOn = sum/10;
+	    		  curAns = curAns.next;
+	    		  cur1 = cur1.next;
+	    		  cur2 = cur2.next;
+	    	}
+	    	while(cur1!=null) {
+	    		curAns.next = new ListNode(cur1.val); 
+	    		 curAns = curAns.next; cur1 = cur1.next;
+	    	    }
+	    	while(cur2!=null) {
+	    		curAns.next = new ListNode(cur2.val); 
+	    		 curAns = curAns.next; cur2 = cur2.next;
+	    	    }    	
+	    	return dummy.next; 
+	    }
 	    public static void print(ListNode h) {
 			System.out.println();
 			while(h!=null) {
@@ -99,7 +121,7 @@ public class AddTwoNumbers {
 		l2.h2.next.next.next.next.next.next.next.next.next = new ListNode(9);*/
 			
 			print(h2);
-			print(addTwoNumbers(h1,h2));
+			print(addTwoNumbers2(h1,h2));
 			
 			
 			
