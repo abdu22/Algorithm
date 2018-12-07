@@ -4,6 +4,12 @@ public class Dimond {
 	public static void main(String[] args) {
 		
 		BuildDiamond(5);
+		BuildDiamond(4);
+		BuildDiamond(3);
+		BuildDiamond(2);
+		BuildDiamond(1);
+		
+		
 	}
 	/*  if n = , 
 	               X 
@@ -43,7 +49,7 @@ public class Dimond {
 		 }
 		 // Building the second  half dimond 
 		 // the same with the above one, except c = 4 and keep decrement. 
-		c = 4;   
+		c = n-1;   
 		while(c>=1) {
 			String InternalSpace = " ";
 			 int NoOfinterSpace = c-1;
