@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ThenComparing {
 
@@ -16,8 +17,12 @@ public class ThenComparing {
     		   								new Employee("abdu", 20),
     		   								new Employee("elias", 19));  
        
-       Collections.sort(emp, Comparator.comparing(byname).thenComparing(byage).reversed());
-       			for(Employee x:emp) 
+       List<Employee> sortemp = emp.stream()
+    		                       .sorted(Comparator.comparing(byname).thenComparing(byage))
+                                    .collect(Collectors.toList());
+       
+      // Collections.sort(emp, Comparator.comparing(byname).thenComparing(byage).reversed());
+       			for(Employee x:sortemp) 
        					System.out.println(x.getName()+" , "+x.getAge());
        			
        			/*		elias , 19
