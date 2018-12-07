@@ -34,6 +34,7 @@ public class BalancedBinaryTree {
 		t1.right.left = new TreeNode(13);
 		t1.right.left.left = new TreeNode(1);
 		System.out.println(isBalanced(t1));
+	
 	}
 
 }

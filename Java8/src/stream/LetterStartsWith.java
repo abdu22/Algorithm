@@ -10,7 +10,7 @@ public class LetterStartsWith {
 	public static void main(String[] args) {
 		List<String> in = Arrays.asList("abdu", "Elias", "alemu", "abdu");
 		List<String> out_1 = findStartsWithLetterToUpper_1(in,'a');
-		List<String> out_2 = findStartsWithLetterToUpper_2(in,'a');
+		List<String> out_2 = findStartsWithLetterToUpper_3(in,'a');
 		
 		System.out.println(out_1);
 		System.out.println(out_2);
@@ -36,5 +36,10 @@ public class LetterStartsWith {
 					   .map(x -> x.toUpperCase())
 					   .collect(Collectors.toList());
 			return ans; 	
+		}
+   
+		public static List<String> findStartsWithLetterToUpper_3( List<String> list, char c) {
+			
+			return list.stream().filter(x -> x.startsWith(""+c)).map(x -> x.toUpperCase()).collect(Collectors.toList());
 		}
 }

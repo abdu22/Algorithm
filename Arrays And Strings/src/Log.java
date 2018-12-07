@@ -35,6 +35,7 @@ public class Log {
             	   }
             }
      List<String> arr = new ArrayList<String>( h.keySet());
+     
      for(String x:arr)
     	 System.out.println(x+" "+h.get(x));
      
