@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Log {
-	
 	static HashMap<String, Integer> h = new HashMap<>();
 	 private static final Scanner scan = new Scanner(System.in);
 	    
@@ -16,13 +15,11 @@ public class Log {
 	        // read the string filename
 	    	System.out.print("Enter the file name with extension : ");
 	        String filename;
-	        filename = scan.nextLine();
+	        filename =scan.nextLine();
 	        File file = new File(filename);  
 	        //Scanner input = new Scanner(file); 
 	        
 	        BufferedReader br=new BufferedReader(new FileReader(file));
-	     	
-	     	
 	    	String s;
             while((s=br.readLine()) != null) {
             	   System.out.println(s);
@@ -38,8 +35,7 @@ public class Log {
      
      for(String x:arr)
     	 System.out.println(x+" "+h.get(x));
-     
-     FileWriter writer = new FileWriter("/Users/abdurahmanmustefa/git/Algorithm/Arrays And Strings/src/a2.txt"); 
+     FileWriter writer = new FileWriter("/Users/dlabuser1/Documents/GitHub/Algorithm/Arrays And Strings/src/a2.txt"); 
      for(String y:arr) {
     	     String v = y+h.get(y);
     	     writer.write(v+"\n");

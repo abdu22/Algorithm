@@ -13,13 +13,13 @@ public class SingletonRevision {
 
 }
 
-class Singleton2 {
-	private static Singleton2 obj; 
-	private Singleton2 () {};
+class Singleton3 {
+	private static Singleton3 obj; 
+	private Singleton3 () {};
 	
-	public static synchronized Singleton2 getObj() {
+	public static /*synchronized */Singleton3 getObj() {
 		if(obj == null) {
-		obj = new Singleton2();
+		obj = new Singleton3();
 		System.out.println("new obj created . . . ");
 		} 
 		return obj;
@@ -28,21 +28,21 @@ class Singleton2 {
 
 class Tr1 extends Thread {
 	public void run() {
-		Singleton2 instance = Singleton2.getObj();
+		Singleton3 instance = Singleton3.getObj();
  	}
 }
 class Tr2 extends Thread {
 	public void run() {
-		Singleton2 instance = Singleton2.getObj();
+		Singleton3 instance = Singleton3.getObj();
  	}
 }
 class Tr3 extends Thread {
 	public void run() {
-		Singleton2 instance = Singleton2.getObj();
+		Singleton3 instance = Singleton3.getObj();
  	}
 }
 class Tr4 extends Thread {
 	public void run() {
-		Singleton2 instance = Singleton2.getObj();
+		Singleton3 instance = Singleton3.getObj();
  	}
 }

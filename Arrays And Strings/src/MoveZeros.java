@@ -5,14 +5,14 @@ public class MoveZeros {
 		int a [] = {0,1,0,0,0,3,12};
 		
 		int b [] = {0,0,1,0,0,0};
-		moveZeroes(a);
+		moveZeroes3(a);
 		System.out.println();
-		moveZeroes(b);
+		moveZeroes3(b);
 		System.out.println();
 		System.out.println("= = = = = = = = = = = = = =");
-		moveZeroes2(a);
+		//moveZeroes2(a);
 		System.out.println();
-		moveZeroes2(b);
+		//moveZeroes2(b);
 	}
     
 	public static void moveZeroes(int[] nums) {
@@ -45,5 +45,22 @@ public class MoveZeros {
         	System.out.print(x+",");
         }
         
+    }
+
+    public static void moveZeroes3(int[] nums) {
+    	
+    	int count = 0;
+    	for(int i=0; i<nums.length ; i++) {
+    		if(nums[i]!=0) {
+    			nums[count] = nums[i];
+    			count++;
+    		}	
+    	}
+		for(int k=count;k<nums.length;k++) {
+		  nums[k] = 0;        		
+		}
+		for(int x:nums)
+		System.out.print(x+",");
+		
     }
 }

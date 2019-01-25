@@ -9,7 +9,7 @@ public class LetterStartsWith {
 
 	public static void main(String[] args) {
 		List<String> in = Arrays.asList("abdu", "Elias", "alemu", "abdu");
-		List<String> out_1 = findStartsWithLetterToUpper_1(in,'a');
+		List<String> out_1 = findStartsWithLetterToUpper_2(in,'a');
 		List<String> out_2 = findStartsWithLetterToUpper_3(in,'a');
 		
 		System.out.println(out_1);

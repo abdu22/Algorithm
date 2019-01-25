@@ -24,6 +24,7 @@ public class TwoEqualLinkedList {
 	   ListNode h1 = l1;
 	   ListNode h2 = l2;
 	     while(h1 != null && h2 != null) {
+	    	 
 	    	 if(h1.val != h2.val) return false;
 	    	 
 	    	 h1 = h1.next;

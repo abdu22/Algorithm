@@ -26,9 +26,9 @@ public class MyTry {
 		 String s2 = new String("xxx");
 		 String s3 = s1;
 		 
-		 System.out.println(s1==s2);
-		 System.out.println(s1==s3);
-		 System.out.println(s1.equals(s2));
+		 //System.out.println(" : s1==s2  "+ s1==s2);
+		// System.out.println(" : s1==s3  "+s1==s3);
+		 System.out.println(" : s1.equals(s2) "+s1.equals(s2));
 		 System.out.println("==============");
 		 String s4 = new String();
 		 String s5 = new String();

@@ -20,8 +20,6 @@ public class ReverseString {
 		return ans ;
 		
 	}
-	 
-	
 	public static String reverse2(String s) {
 		
 		String [] stAr = s.split(" ");
@@ -32,12 +30,10 @@ public class ReverseString {
 				  a = a+x.charAt(i);
 			 }
 			 ans = ans + a + " ";
-		}
-		
+		}	
 		return ans;
 	}
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {	
 		String input = "this is string"; 
 		
 		String output = reverse(input);
