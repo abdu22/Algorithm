@@ -42,6 +42,8 @@ public static String addBinary(String a, String b) {
         }
         return  n;
     }
+	
+	
     public static String toBinary(Long n){
     	    if(n==0) return "0";
         String s = "";
@@ -52,5 +54,50 @@ public static String addBinary(String a, String b) {
         }
         s =  new StringBuffer(s).reverse().toString();
         return s;
+    }
+	
+	// final ans
+    public static String addBinary(String a, String b) {
+
+       char[] ca = a.toCharArray();
+       char[] cb = b.toCharArray();
+
+       int x= ca.length-1;
+       int y = cb.length-1;
+
+       String ans = "";
+       int carryOver = 0;
+       while( x>=0 && y >= 0 ) {
+
+           int ai = ca[x] - '0';
+           int bi = cb[y] - '0';
+
+
+           int sum = (ai +bi + carryOver) % 2;
+
+           ans = ""+sum+ans;
+
+           carryOver = (ai + bi + carryOver) / 2 ;
+
+           x--; y--;
+       }
+
+       while ( x >= 0) {
+           int ai = ca[x] - '0';
+           int sum = (ai + carryOver) % 2;
+           ans = ""+sum+ans;
+           carryOver = (ai + carryOver) / 2 ;
+           x--;
+
+       }
+        while ( y >= 0) {
+            int bi = cb[y] - '0';
+            int sum = (bi + carryOver) % 2;
+            ans = ""+sum+ans;
+            carryOver = (bi + carryOver) / 2 ;
+            y--;
+        }
+      if(carryOver != 0)  ans = ""+carryOver+ans;
+      return ans;
     }
 }
