@@ -2,6 +2,10 @@ Arrays.sort(a,k,a.length);
 
 Continuous Subarray Sum . (Check for k==0)
 
+Subarray Sum Equals K
+        for case int a2[] = {0,0,0,0,0,0,0,0,0,0};
+            int k2 = 0;
+
 Move zeros
 Serialize and Deserialize a binary tree
 Sort Transformed Array 
