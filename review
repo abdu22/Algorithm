@@ -1,1 +1,11 @@
 Arrays.sort(a,k,a.length); 
+
+Continuous Subarray Sum . (Check for k==0)
+
+Move zeros
+Serialize and Deserialize a binary tree
+Sort Transformed Array 
+Check weather an array can we sorted by swapping just a pair of elements(https://www.geeksforgeeks.org/sort-an-almost-sorted-array-where-only-two-elements-are-swapped/)
+Add and search word 
+Combination Sum 
+Range Sum Query 2D - Immutable
