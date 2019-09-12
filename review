@@ -7,6 +7,7 @@ Subarray Sum Equals K
             int k2 = 0;
             
 Accounts Merge
+Longest Arithmetic Sequence
 
 Move zeros
 Serialize and Deserialize a binary tree
