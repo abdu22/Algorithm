@@ -7,6 +7,8 @@ Subarray Sum Equals K
             int k2 = 0;
 
 Doing int mid = (lo + hi) / 2; is prone to overflow. Instead int mid = lo + (hi - lo) / 2
+Adding two integers = conside max and min int value.   
+
 
 Accounts Merge
 Longest Arithmetic Sequence
