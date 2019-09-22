@@ -5,7 +5,9 @@ Continuous Subarray Sum . (Check for k==0)
 Subarray Sum Equals K
         for case int a2[] = {0,0,0,0,0,0,0,0,0,0};
             int k2 = 0;
-            
+
+Doing int mid = (lo + hi) / 2; is prone to overflow. Instead int mid = lo + (hi - lo) / 2
+
 Accounts Merge
 Longest Arithmetic Sequence
 
