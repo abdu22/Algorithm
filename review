@@ -9,7 +9,10 @@ Subarray Sum Equals K
 - Doing int mid = (lo + hi) / 2; is prone to overflow. Instead int mid = lo + (hi - lo) / 2
 - Adding two integers = conside max and min int value. 
 - int a = (int) Math.pow(c,b);  // Math.pow returns Double not int
+- List<> a = Array.asList(1,2,3,4,5);     List<> temp = a;  if( a == null ), then temp will be null;
 
+
+--  Encoding and Decoding String ?????
 
 Accounts Merge
 Longest Arithmetic Sequence
