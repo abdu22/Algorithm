@@ -10,7 +10,7 @@ Subarray Sum Equals K
 - Adding two integers = conside max and min int value. 
 - int a = (int) Math.pow(c,b);  // Math.pow returns Double not int
 - List<> a = Array.asList(1,2,3,4,5);     List<> temp = a;  if( a == null ), then temp will be null;
-
+_ map.putIfAbsent(k, v)
 
 --  Encoding and Decoding String ?????
 
